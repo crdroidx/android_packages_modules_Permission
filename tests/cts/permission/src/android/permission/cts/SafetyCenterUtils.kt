@@ -24,6 +24,7 @@ import android.os.UserHandle
 import android.provider.DeviceConfig
 import android.safetycenter.SafetyCenterIssue
 import android.safetycenter.SafetyCenterManager
+import androidx.annotation.VisibleForTesting
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.By
 import com.android.compatibility.common.util.SystemUtil.callWithShellPermissionIdentity
@@ -51,6 +52,7 @@ object SafetyCenterUtils {
 
     /** Enabled or disable Safety Center */
     @JvmStatic
+    @VisibleForTesting
     fun setSafetyCenterEnabled(enabled: Boolean) {
         setDeviceConfigPrivacyProperty(PROPERTY_SAFETY_CENTER_ENABLED, enabled.toString())
         val safetyCenterManager =
